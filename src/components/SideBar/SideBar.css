@@ -1,0 +1,12 @@
+.NavLink {
+  text-decoration: none;
+  color: grey;
+}
+
+.active {
+  color: orange;
+}
+
+* {
+  font-family: 'source code pro';
+}
