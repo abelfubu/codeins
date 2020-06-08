@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "blocks": "^0.3.5",
     "code": "^5.2.4",
+    "gh-pages": "^3.0.0",
     "react": "^16.13.1",
     "react-code-blocks": "0.0.7",
     "react-dom": "^16.13.1",
@@ -18,7 +19,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

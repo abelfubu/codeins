@@ -75,6 +75,23 @@ import React, { Suspense } from 'react';
     <Lazy/>
   </Suspense>
 )}`,
+  push: `this.props.history.push('/checkout');
+this.props.history.goBack();
+this.props.history.replace('/checkout/more');`,
+  data: `<Route
+  path={this.PaymentResponse.match.path + '/contact-data'}
+  render={(props) => (<Component data={this.state.data} {...props} />)}
+/>`,
+  test: `<h3>Pasando datos a través de route</h3>
+  <p>Pequeño truco para pasar data entre rutas</p>
+  <Box my={3}>
+    <CopyBlock
+      text={RouterCode.data}
+      language='jsx'
+      theme={nord}
+      codeBlock
+    />
+  </Box>`,
 };
 
 export default Content;

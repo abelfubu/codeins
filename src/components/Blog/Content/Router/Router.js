@@ -139,6 +139,26 @@ const Router = () => {
             codeBlock
           />
         </Box>
+        <h3>props.history</h3>
+        <p>Metodos que proporciona router para poder gestionar las rutas</p>
+        <Box my={3}>
+          <CopyBlock
+            text={RouterCode.push}
+            language='jsx'
+            theme={nord}
+            codeBlock
+          />
+        </Box>
+        <h3>Pasando datos a través de route</h3>
+        <p>Pequeño truco para pasar data entre rutas</p>
+        <Box my={3}>
+          <CopyBlock
+            text={RouterCode.data}
+            language='jsx'
+            theme={nord}
+            codeBlock
+          />
+        </Box>
       </Container>
     </div>
   );
