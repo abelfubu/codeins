@@ -1,6 +1,7 @@
 {
   "name": "1playing",
   "version": "0.1.0",
+  "homepage": "https://abelfubu.github.io/code-ins",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.10.0",
@@ -39,7 +40,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "homepage": "https://abelfubu.github.io/code-ins"
+    ]
   }
 }
