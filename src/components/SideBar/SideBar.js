@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -22,8 +22,11 @@ import CodeIcon from '@material-ui/icons/Code';
 import Blog from '../Blog/Blog';
 import Axios from '../Blog/Content/Axios/Axios';
 import Router from '../Blog/Content/Router/Router';
+import Redux from '../Blog/Content/Redux/Redux';
 import './SideBar.css';
 import Fab from '@material-ui/core/Fab';
+
+import { connect } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -86,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
 }));
 
-export default function PermanentDrawerLeft() {
+const SideBar = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -143,7 +146,7 @@ export default function PermanentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {['Axios', 'Router', 'Send email', 'Drafts'].map((text, index) => (
+          {['Axios', 'Router', 'Redux', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText>
                 <NavLink className='NavLink' to={'/' + text}>
@@ -173,7 +176,15 @@ export default function PermanentDrawerLeft() {
         <Route path='/' exact component={Blog} />
         <Route path='/axios' component={Axios} />
         <Route path='/router' component={Router} />
+        <Route path='/redux' component={Redux} />
       </main>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => {
+  return {
+    ctr: state.counter,
+  };
+};
+export default connect(mapStateToProps)(withRouter(SideBar));

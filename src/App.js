@@ -8,6 +8,7 @@ function App() {
     <div className='App'>
       <HashRouter>
         <SideBar />
+        {/* <Form /> */}
       </HashRouter>
     </div>
   );

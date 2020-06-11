@@ -6,6 +6,7 @@ const Form = (props) => {
     name: '',
     email: '',
     password: '',
+    valid: false,
   });
 
   const handleSubmit = (e) => {
@@ -21,12 +22,18 @@ const Form = (props) => {
 
   const changeH = (event) => {
     const { value, name } = event.target;
+
     setForm((prevValue) => {
       return {
         ...prevValue,
         [name]: value,
       };
     });
+
+    if (form.password.length > 4) {
+      setForm((prevValue) => ({ ...prevValue, valid: true }));
+      // message = <p>Good Job</p>;
+    }
   };
 
   return (
@@ -39,14 +46,16 @@ const Form = (props) => {
           name='name'
           placeholder='Your Name'
           value={form.name}
+          required
         />
         <label htmlFor='email'>Email</label>
         <input
           onChange={changeH}
-          type='text'
+          type='email'
           name='email'
           placeholder='Your Email'
           value={form.email}
+          required
         />
         <label htmlFor='password'>Password</label>
         <input
@@ -54,9 +63,10 @@ const Form = (props) => {
           type='password'
           name='password'
           value={form.password}
+          required
         />
       </div>
-      <button>Enviar</button>
+      {form.valid ? <button>Enviar</button> : <button disabled>Enviar</button>}
     </form>
   );
 };
