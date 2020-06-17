@@ -49,6 +49,18 @@ const Blog = () => {
             codeBlock
           />
         </Box>
+        <h3>Exports</h3>
+        <p>
+          Creando una única ruta para multiples exports de multiples archivos
+        </p>
+        <Box my={3}>
+          <CopyBlock
+            text={BlogCode.exports}
+            language='jsx'
+            theme={nord}
+            codeBlock
+          />
+        </Box>
       </Container>
     </div>
   );

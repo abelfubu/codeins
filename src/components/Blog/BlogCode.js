@@ -76,6 +76,9 @@ const Content = {
   };
   
   export default Form;`,
+  exports: `export { add, subtract, increment, decrement } from './counter';
+
+export { addResult, deleteResult } from './result';`,
 };
 
 export default Content;

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../store/exports';
 import './Form.css';
 
 const Form = (props) => {
@@ -11,8 +13,8 @@ const Form = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // props.submit(form);
-    console.log(form);
+    console.log(form.email, form.password);
+    props.onAuth(form.email, form.password);
     setForm({
       name: '',
       email: '',
@@ -71,4 +73,10 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuth: (email, password) => dispatch(actions.auth(email, password)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Form);

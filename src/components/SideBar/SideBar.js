@@ -23,6 +23,8 @@ import Blog from '../Blog/Blog';
 import Axios from '../Blog/Content/Axios/Axios';
 import Router from '../Blog/Content/Router/Router';
 import Redux from '../Blog/Content/Redux/Redux';
+import Context from '../Blog/Content/Context/Context';
+import Mui from '../Blog/Content/mui/mui';
 import './SideBar.css';
 import Fab from '@material-ui/core/Fab';
 
@@ -146,15 +148,17 @@ const SideBar = (props) => {
         </div>
         <Divider />
         <List>
-          {['Axios', 'Router', 'Redux', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText>
-                <NavLink className='NavLink' to={'/' + text}>
-                  {text}
-                </NavLink>
-              </ListItemText>
-            </ListItem>
-          ))}
+          {['Axios', 'Router', 'Redux', 'Context', 'MaterialUI'].map(
+            (text, index) => (
+              <ListItem button key={index}>
+                <ListItemText>
+                  <NavLink className='NavLink' to={'/' + text}>
+                    {text}
+                  </NavLink>
+                </ListItemText>
+              </ListItem>
+            ),
+          )}
         </List>
         <Divider />
         <List>
@@ -177,6 +181,8 @@ const SideBar = (props) => {
         <Route path='/axios' component={Axios} />
         <Route path='/router' component={Router} />
         <Route path='/redux' component={Redux} />
+        <Route path='/context' component={Context} />
+        <Route path='/materialUI' component={Mui} />
       </main>
     </div>
   );
